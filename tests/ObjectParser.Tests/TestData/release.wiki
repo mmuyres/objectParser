@@ -1,0 +1,14 @@
+{{Infobox process|owner=Build team|status=active}}
+'''Release Process''' describes how we ship. See [[Rollback]] and [[Hotfix|hot fixes]].
+
+== Steps ==
+* Cut the branch
+* Run the [[Tests|test suite]]
+* Tag the build
+
+== Owners ==
+* Build: Pat
+* QA: Sam
+
+=== Escalation ===
+Page the [[On-call]] engineer.

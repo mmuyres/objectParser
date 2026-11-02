@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<model name="demo" version="2">
+  <controls>
+    <type value="pulldown"/>
+    <type value="checkbox"/>
+  </controls>
+  <index name="idxA">
+    <flags><flag attr="portfolio_index"/></flags>
+  </index>
+  <index name="idxB">
+    <flags><flag attr="other"/></flags>
+  </index>
+  <variable name="alpha" type="number">
+    <flags><flag attr="textnode" value="beta"/></flags>
+    <node>first</node>
+  </variable>
+  <variable name="beta" type="text">
+    <flags><flag attr="idxA"/></flags>
+  </variable>
+  <variable name="gamma" type="number"/>
+  <decision name="d1">
+    <flags><flag attr="idxA"/></flags>
+  </decision>
+  <objective name="o1">
+    <flags><flag attr="apfile"/></flags>
+  </objective>
+  <!-- a comment -->
+  <choices>
+    <choice type="pulldown">Pick</choice>
+    <choice type="radio">Radio</choice>
+  </choices>
+  <projatt>
+    <att name="a1" type="pulldown" snapshot_output="ind_one"><option id="7" name="CNS-989"/></att>
+    <att name="a2" snapshot_output="x"/>
+    <att name="a3"/>
+  </projatt>
+</model>

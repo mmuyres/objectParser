@@ -1,0 +1,45 @@
+## MediaWiki markup - an example of an external token map.
+## Each prefix takes three lines: open token, close token, result scope (I inner, O outer, F field).
+
+## h2       == Heading == text                  //h2
+h2=\n==\s
+h2=\s==
+h2=I
+
+## h3       === Heading === text                //h3
+h3=\n===\s
+h3=\s===
+h3=I
+
+## link     [[Target|label]] contents           //link
+link=[[
+link=]]
+link=I
+
+## target   the page each link points to        //target
+##          close token "|\||]]": the nearest of "|" (escaped) or "]]"
+target=[[
+target=|\||]]
+target=I
+
+## tpl      {{Template|...}} contents           //tpl
+tpl={{
+tpl=}}
+tpl=I
+
+## b        '''bold''' text                     //b
+b='''
+b='''
+b=I
+
+## li       * bullet item text                  //li
+##          "\*" is a literal star; a bare * would be the field placeholder
+li=\n\*\s
+li=|\n|\r
+li=I
+
+## Name     a section's body, by heading: after "== Name ==" up to the next
+##          level-2 heading or the end of the page   //Steps   //Owners/li
+ =\n==\s*\s==
+ =|\n==\s|\n==\s
+ =I

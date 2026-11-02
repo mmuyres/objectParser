@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>ObjectParser</AssemblyName>
+    <Description>Token-map based structured text parser: query XML, HTML, source code or any delimited format with a pseudo-XPath, without building a DOM.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ObjectParser.Tests" />
+  </ItemGroup>
+
+</Project>
