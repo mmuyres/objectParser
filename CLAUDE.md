@@ -18,7 +18,14 @@ dotnet test ObjectParser.sln                                  # ~517 tests, a fe
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests"            # one class
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests.Equals_literal"  # one test
 dotnet run --project src/objParser -- -f examples/model.xml -x "//variable/@name"
+dotnet publish src/objParser -p:PublishProfile=win-x64        # free-standing exe → artifacts/win-x64/objParser.exe
 ```
+
+The publish profile (`src/objParser/Properties/PublishProfiles/win-x64.pubxml`) produces one
+self-contained, trimmed, single-file exe (~11 MB, no .NET install needed). Trimming is warning-free
+because everything is `Option Strict On` with no late binding. Keep it that way: late binding or
+reflection in the library can break the trimmed exe while every test still passes. After changing
+the CLI, publish and run the exe once.
 
 .NET 9, VB.NET, `Option Strict On`, `TreatWarningsAsErrors` (in `Directory.Build.props`). In Git
 Bash, run the exe with `MSYS_NO_PATHCONV=1`, or arguments like `</node>` get rewritten.

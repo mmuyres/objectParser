@@ -46,8 +46,21 @@ dotnet test ObjectParser.sln
 dotnet run --project src/objParser -- -f examples/model.xml -x "//variable/@name"
 ```
 
-The built executable is `src/objParser/bin/Debug/net9.0/objParser.exe`. Run it with no arguments
-for a usage summary. Input comes from `-f <file>` or from stdin:
+### A free-standing objParser.exe
+
+To get one `objParser.exe` you can copy anywhere, with nothing else to install (the .NET runtime is
+built in):
+
+```console
+dotnet publish src/objParser -p:PublishProfile=win-x64
+```
+
+The file lands in `artifacts/win-x64/objParser.exe` (about 11 MB). It has no other files to go
+with it.
+
+During development the build output is `src/objParser/bin/Debug/net9.0/objParser.exe`, which
+needs the .NET 9 runtime. Run either one with no arguments for a usage summary. Input comes from
+`-f <file>` or from stdin:
 
 ```console
 $ type examples\model.xml | objParser //variable/@name
