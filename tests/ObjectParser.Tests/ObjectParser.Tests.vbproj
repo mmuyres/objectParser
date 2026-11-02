@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <None Include="TestData\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <!-- the documented examples are test data too, so the README examples stay true -->
+    <None Include="..\..\examples\**\*" LinkBase="TestData" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

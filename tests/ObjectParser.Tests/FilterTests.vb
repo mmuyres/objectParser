@@ -54,7 +54,7 @@ Public Class FilterTests
 
     <Fact>
     Public Sub Right_side_global_path_with_single_value()
-        ' v4.1 threw a NullReferenceException when the right side produced exactly one value
+        ' v4.1 returned nothing when the right side produced exactly one value
         Assert.Equal({"<choice type=""pulldown"">Pick</choice>"}, M("//choices/choice[@type=//controls/type[@value='pulldown']/@value]"))
     End Sub
 
