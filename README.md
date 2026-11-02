@@ -52,13 +52,14 @@ A ready-to-run Windows build is checked in at
 [`dist/win-x64/objParser.exe`](dist/win-x64/objParser.exe) (about 11 MB). It's one file with the
 .NET runtime built in, so you can copy it anywhere and run it without installing anything.
 
-To rebuild it after changing the code:
+The checked-in exe is a snapshot that gets refreshed now and then, not on every change.
+`objParser -ver` shows the commit it was built from. To build a current one yourself:
 
 ```console
 dotnet publish src/objParser -p:PublishProfile=win-x64
 ```
 
-This overwrites `dist/win-x64/objParser.exe`; commit it along with the source change.
+This overwrites `dist/win-x64/objParser.exe`. Commit it only when you mean to refresh the snapshot.
 
 During development the build output is `src/objParser/bin/Debug/net9.0/objParser.exe`, which
 needs the .NET 9 runtime. Run either one with no arguments for a usage summary. Input comes from

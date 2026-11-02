@@ -18,8 +18,12 @@ dotnet test ObjectParser.sln                                  # ~517 tests, a fe
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests"            # one class
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests.Equals_literal"  # one test
 dotnet run --project src/objParser -- -f examples/model.xml -x "//variable/@name"
-dotnet publish src/objParser -p:PublishProfile=win-x64        # free-standing exe → dist/win-x64/objParser.exe (checked in: commit it with source changes)
+dotnet publish src/objParser -p:PublishProfile=win-x64        # free-standing exe → dist/win-x64/objParser.exe
 ```
+
+`dist/win-x64/objParser.exe` is checked in as an occasional snapshot (11 MB per version in git
+history). Don't commit a rebuilt exe unless the owner asks for a refresh. Publishing locally to test
+it is fine; afterwards, `git checkout dist/` to discard the rebuilt exe.
 
 The publish profile (`src/objParser/Properties/PublishProfiles/win-x64.pubxml`) produces one
 self-contained, trimmed, single-file exe (~11 MB, no .NET install needed). Trimming is warning-free
