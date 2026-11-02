@@ -48,15 +48,17 @@ dotnet run --project src/objParser -- -f examples/model.xml -x "//variable/@name
 
 ### A free-standing objParser.exe
 
-To get one `objParser.exe` you can copy anywhere, with nothing else to install (the .NET runtime is
-built in):
+A ready-to-run Windows build is checked in at
+[`dist/win-x64/objParser.exe`](dist/win-x64/objParser.exe) (about 11 MB). It's one file with the
+.NET runtime built in, so you can copy it anywhere and run it without installing anything.
+
+To rebuild it after changing the code:
 
 ```console
 dotnet publish src/objParser -p:PublishProfile=win-x64
 ```
 
-The file lands in `artifacts/win-x64/objParser.exe` (about 11 MB). It has no other files to go
-with it.
+This overwrites `dist/win-x64/objParser.exe`; commit it along with the source change.
 
 During development the build output is `src/objParser/bin/Debug/net9.0/objParser.exe`, which
 needs the .NET 9 runtime. Run either one with no arguments for a usage summary. Input comes from

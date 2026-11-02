@@ -8,7 +8,7 @@ objParser [options] -d <open> -D <close>  (ad-hoc delimiters instead of a path)
 
 Get a free-standing `objParser.exe` (one file, runs without .NET installed) with
 `dotnet publish src/objParser -p:PublishProfile=win-x64`; it is written to
-`artifacts/win-x64/objParser.exe`.
+`dist/win-x64/objParser.exe`.
 
 Results go to **stdout**, one per line. Diagnostics, timings, counts and warnings go to **stderr**,
 so they never mix with results in a pipe.

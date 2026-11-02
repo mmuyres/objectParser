@@ -18,7 +18,7 @@ dotnet test ObjectParser.sln                                  # ~517 tests, a fe
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests"            # one class
 dotnet test ObjectParser.sln --filter "FullyQualifiedName~FilterTests.Equals_literal"  # one test
 dotnet run --project src/objParser -- -f examples/model.xml -x "//variable/@name"
-dotnet publish src/objParser -p:PublishProfile=win-x64        # free-standing exe → artifacts/win-x64/objParser.exe
+dotnet publish src/objParser -p:PublishProfile=win-x64        # free-standing exe → dist/win-x64/objParser.exe (checked in: commit it with source changes)
 ```
 
 The publish profile (`src/objParser/Properties/PublishProfiles/win-x64.pubxml`) produces one

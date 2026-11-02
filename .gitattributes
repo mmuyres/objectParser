@@ -1,3 +1,4 @@
 * text=auto
 *.map text eol=lf
 *.wiki text eol=lf
+*.exe binary
